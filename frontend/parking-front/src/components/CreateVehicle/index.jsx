@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'semantic-ui-react'
-import { BASE_URL } from '../utils/request';
+
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
@@ -28,7 +28,7 @@ export default function CreateVehicle() {
     }, []);
 
     const postData = () => {
-        axios.post(`${BASE_URL}/veiculos/salvar`, {
+        axios.post(`http://localhost:8080/veiculos/salvar`, {
             marca,
             modelo,
             ano,
