@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'semantic-ui-react';
 import axios from 'axios';
+import { BASE_URL } from '../utils/request';
 
 
 export default function ReadVehicle() {
@@ -16,7 +17,7 @@ export default function ReadVehicle() {
 
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:8080/usuarios/${id}/veiculos`)
+        axios.get(`${BASE_URL}/usuarios/${id}/veiculos`)
             .then((response) => {
                 setAPIData(response.data);
             })

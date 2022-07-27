@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'semantic-ui-react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../utils/request';
 
 export default function Read() {
 
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:8080/usuarios`)
+        axios.get(`${BASE_URL}/usuarios`)
             .then((response) => {
                 setAPIData(response.data);
             })

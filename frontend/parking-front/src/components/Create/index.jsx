@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { BASE_URL } from '../utils/request';
 
 export default function Create() {
     const [nome, setNome] = useState('');
@@ -10,7 +11,7 @@ export default function Create() {
     const [checkbox, setCheckbox] = useState(false);
 
     const postData = () => {
-        axios.post(`http://localhost:8080/usuarios/salvar`, {
+        axios.post(`${BASE_URL}/usuarios/salvar`, {
             nome,
             email,
             cpf,
